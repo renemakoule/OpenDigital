@@ -77,15 +77,15 @@ const Footer = () => {
             <div className="flex items-center space-x-2">
               {/* Remplacer par votre vrai logo SVG ou Image */}
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-[#1E3A8A] dark:text-white tracking-tight leading-none">
+                <span className="text-xs font-bold text-[#1E3A8A] dark:text-white tracking-tight leading-none">
                   OPEN DIGITAL
                 </span>
-                <span className="text-[10px] text-gray-400 dark:text-zinc-500 font-medium tracking-widest mt-1 uppercase">
+                <span className="text-[8px] text-gray-400 dark:text-zinc-500 font-medium tracking-widest mt-1 uppercase">
                   République du Cameroun
                 </span>
               </div>
             </div>
-            <p className="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed max-w-xs transition-colors">
+            <p className="text-xs text-gray-500 dark:text-zinc-400 leading-relaxed max-w-xs transition-colors">
               Plateforme nationale unifiée pour l'accès aux services publics
               numériques. Développée pour assurer la continuité du service
               public et la transparence administrative.
@@ -134,7 +134,7 @@ const Footer = () => {
                     <motion.div whileHover="hover">
                       <Link
                         href={link.href}
-                        className="text-[14px] text-gray-500 dark:text-zinc-400 hover:text-blue-700 dark:hover:text-blue-400 transition-colors block"
+                        className="text-[11px] text-gray-500 dark:text-zinc-400 hover:text-blue-700 dark:hover:text-blue-400 transition-colors block"
                       >
                         <motion.span
                           variants={linkHover}
@@ -153,12 +153,12 @@ const Footer = () => {
 
         {/* --- Bottom Section: Copyright & Motto --- */}
         <div className="pt-8 border-t border-gray-200 dark:border-zinc-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 transition-colors">
-          <div className="text-[11px] text-gray-400 dark:text-zinc-500 uppercase tracking-widest font-medium">
+          <div className="text-[8px] text-gray-400 dark:text-zinc-500 uppercase tracking-widest font-medium">
             © {currentYear} GOUVERNEMENT DU CAMEROUN • OPEN DIGITAL
           </div>
 
           <div className="flex items-center space-x-3">
-            <span className="text-[11px] italic text-gray-400 dark:text-zinc-500 font-medium">
+            <span className="text-[8px] italic text-gray-400 dark:text-zinc-500 font-medium">
               Paix - Travail - Patrie
             </span>
             {/* Drapeau Cameroun (Simple représentation CSS ou SVG) */}
