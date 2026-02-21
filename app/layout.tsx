@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 
 import { CameroonArc } from "@/components/ui/CameroonArc";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { ThemeTransition } from "@/components/layout/ThemeTransition";
 
 export default function RootLayout({
   children,
@@ -31,6 +32,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <CameroonArc />
+          <ThemeTransition />
           {children}
         </ThemeProvider>
       </body>

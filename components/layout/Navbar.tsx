@@ -45,9 +45,15 @@ export const Navbar = () => {
   const handleThemeToggle = () => {
     const currentTheme = resolvedTheme || theme;
     const newTheme = currentTheme === "dark" ? "light" : "dark";
-    console.log("Switching theme from", currentTheme, "to", newTheme);
-    setTheme(newTheme);
-    localStorage.setItem("theme-manual", "true");
+
+    // Trigger the sweep animation first
+    window.dispatchEvent(new CustomEvent("theme-sweep"));
+
+    // Delay the actual theme change so it happens when the screen is covered
+    setTimeout(() => {
+      setTheme(newTheme);
+      localStorage.setItem("theme-manual", "true");
+    }, 300);
   };
 
   if (!mounted) return null;
@@ -130,11 +136,22 @@ export const Navbar = () => {
             onClick={handleThemeToggle}
             className="p-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors"
           >
-            {theme === "dark" ? (
-              <Sun className="w-4 h-4 text-zinc-400" />
-            ) : (
-              <Moon className="w-4 h-4 text-slate-500" />
-            )}
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={resolvedTheme}
+                initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
+                animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
+                whileHover={{ rotate: 360, scale: 1.2 }}
+                transition={{ duration: 0.7, ease: "easeInOut" }}
+              >
+                {resolvedTheme === "dark" ? (
+                  <Sun className="w-4 h-4 text-zinc-400" />
+                ) : (
+                  <Moon className="w-4 h-4 text-slate-500" />
+                )}
+              </motion.div>
+            </AnimatePresence>
           </button>
 
           {/* Mobile Toggle */}
