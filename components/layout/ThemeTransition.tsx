@@ -37,7 +37,14 @@ export const ThemeTransition = () => {
         >
           {/* Cameroon colors sweep */}
           <div className="flex-1 bg-primary-green" />
-          <div className="flex-1 bg-primary-red" />
+          <div className="flex-1 bg-primary-red flex items-center justify-center">
+            <svg
+              viewBox="0 0 100 100"
+              className="w-32 h-32 md:w-64 md:h-64 text-primary-yellow fill-current"
+            >
+              <path d="M50,15 L58.2,38 L82.5,38 L62.8,52.5 L70.5,76.5 L50,61.8 L29.5,76.5 L37.2,52.5 L17.5,38 L41.8,38 Z" />
+            </svg>
+          </div>
           <div className="flex-1 bg-primary-yellow" />
         </motion.div>
       )}
