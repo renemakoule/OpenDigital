@@ -8,6 +8,7 @@ import { TrustSection } from "@/components/sections/Trust";
 import { Projects } from "@/components/sections/Projects";
 import { Innovators } from "@/components/sections/Innovators";
 import { CameroonArc } from "@/components/ui/CameroonArc";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { motion } from "framer-motion";
 import Footer from "@/components/footer";
 
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <main className="min-h-screen text-foreground overflow-x-hidden transition-colors duration-500">
       <Navbar />
+      <ScrollToTop />
 
       {/* Sceau de la République (Background Watermark) */}
       <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-[-1] opacity-[0.1] dark:opacity-[0.15]">
